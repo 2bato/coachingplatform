@@ -1,0 +1,34 @@
+.Exercise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 2vh;
+  text-align: center;
+}
+
+.Exercise-Item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(250, 161, 52);
+  border-radius: 15px;
+  padding-inline: 3%;
+}
+.Movement {
+    width: 30%;
+}
+
+.Scheme {
+    width: 10%;
+}
+
+.RpeDropdown {
+    width: 6%;
+}
+
+.Weight {
+    width: 10%;
+}
+

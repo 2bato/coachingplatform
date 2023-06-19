@@ -1,0 +1,12 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  min-width: 80%;
+  align-items: center;
+}
+
+.weightInput {
+  text-align: center;
+  font-size: small;
+  font-weight: bold;
+}
