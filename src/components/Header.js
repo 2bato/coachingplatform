@@ -1,25 +1,13 @@
+import { isDOMComponent } from 'react-dom/test-utils';
 import './Header.css';
 import React from 'react';
+import BodyweightCell from './BodyweightCell';
 
-function BodyweightCell() {
-  return (
-    <div className="BodyweightCell">
-      <input
-        placeholder="Bodyweight"
-        size="10"
-        type="text"
-        className="weightInput"
-        contentEditable={true}
-      />
-    </div>
-  );
-}
-
-export default function Header(weekNumber) {
+export default function Header({WeekNumber}) {
   return (
     <div className="Header">
       <div className="WeekNumber">
-        <h2>Week 1</h2>
+        <h2>Week {WeekNumber}</h2>
       </div>
       <div className="BodyweightCell">
         <BodyweightCell></BodyweightCell>

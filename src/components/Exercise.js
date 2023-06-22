@@ -23,42 +23,23 @@ function RpeDropdown() {
   );
 }
 
-export default function Exercise() {
-  const exercises = [
-    {
-      movement: 'Low Bar Paused Squat',
-      scheme: '1 set of 4',
-      rpe: 7,
-      weight: '215 kg',
-    },
-    {
-      movement: 'Low Bar Comp Squat',
-      scheme: '2 sets of 6',
-      rpe: 6,
-      weight: '175 kg',
-    },
-    {
-      movement: 'Tempo Paused Bench',
-      scheme: '3 sets of 7',
-      rpe: 7,
-      weight: '125 kg',
-    },
-  ];
+export default function Exercise({props}) {
+ 
   return (
     <div className="Exercise">
-      {exercises.map((exercise, index) => (
+      {props.map((props, index) => (
         <div key={index} className="Exercise-Item">
           <div className="Movement">
-            <p>{exercise.movement}</p>
+            <p>{props.movement}</p>
           </div>
           <div className="Scheme">
-            <p>{exercise.scheme}</p>
+            <p>{props.scheme}</p>
           </div>
           <div className="RpeDropdown">
             <RpeDropdown/>
           </div>
           <div className="Weight">
-            <p>{exercise.weight}</p>
+            <p>{props.weight}</p>
           </div>
         </div>
       ))}
