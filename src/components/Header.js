@@ -9,8 +9,8 @@ export default function Header({WeekNumber}) {
       <div className="WeekNumber">
         <h2>Week {WeekNumber}</h2>
       </div>
-      <div className="BodyweightCell">
-        <BodyweightCell></BodyweightCell>
+      <div>
+        <BodyweightCell/>
       </div>
     </div>
   );

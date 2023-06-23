@@ -1,18 +1,17 @@
 import './Exercise.css';
 import React, { useState } from 'react';
 
-function RpeDropdown() {
-  const [selectedOption, setSelectedOption] = useState('');
+function RpeDropdown({ rpe }) {
+  const [RPE, setRPE] = useState(rpe);
   const [options] = useState(Array.from(Array(10), (_, index) => ++index));
 
-  const handleChange = (event) => {
-    setSelectedOption(event.target.value);
+  const clickHandler = (event) => {
+    setRPE(event.target.value);
   };
 
   return (
     <div>
-      <select value={selectedOption} onChange={handleChange}>
-        <option>RPE</option>
+      <select value={RPE} onChange={clickHandler}>
         {options.map((option) => (
           <option key={option} value={option}>
             {option}
@@ -23,10 +22,23 @@ function RpeDropdown() {
   );
 }
 
-export default function Exercise({props}) {
- 
+export default function Exercise({ props }) {
   return (
     <div className="Exercise">
+      <div className='Exercise-Label'>
+      <div className="Movement">
+            <p>Movement</p>
+          </div>
+          <div className="Scheme">
+            <p>Scheme</p>
+          </div>
+          <div className="RpeDropdown">
+            <p>RPE</p>
+          </div>
+          <div className="Weight">
+            <p>Weight</p>
+          </div>
+      </div>
       {props.map((props, index) => (
         <div key={index} className="Exercise-Item">
           <div className="Movement">
@@ -36,7 +48,7 @@ export default function Exercise({props}) {
             <p>{props.scheme}</p>
           </div>
           <div className="RpeDropdown">
-            <RpeDropdown/>
+            <RpeDropdown rpe={props.rpe} />
           </div>
           <div className="Weight">
             <p>{props.weight}</p>

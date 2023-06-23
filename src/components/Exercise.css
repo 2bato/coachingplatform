@@ -2,33 +2,48 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 100%;
-  gap: 2vh;
   text-align: center;
+  font-size: calc(5px + 2vmin);
+  font-weight: bold;
+  color: white;
+  margin: 3%;
+  border-radius: 3%;
+  background-color: rgba(250, 161, 52, 0.616);
+}
+
+.Exercise-Label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-inline: 3%;
+  margin-inline: 2%;
 }
 
 .Exercise-Item {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   background-color: rgb(250, 161, 52);
-  border-radius: 15px;
   padding-inline: 3%;
+  margin-inline: 2%;
+  margin-bottom: 1.5%;
 }
+
+
 .Movement {
-    width: 30%;
+  width: 30%;
 }
 
 .Scheme {
-    width: 10%;
+  width: 10%;
 }
 
 .RpeDropdown {
-    width: 6%;
+  width: 6%;
 }
 
 .Weight {
-    width: 10%;
+  width: 10%;
 }
-
