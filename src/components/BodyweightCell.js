@@ -1,5 +1,4 @@
 import './BodyweightCell.css';
-import React from 'react';
 
 export default function BodyweightCell() {
   return (

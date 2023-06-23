@@ -7,7 +7,7 @@
   font-weight: bold;
   color: white;
   margin: 3%;
-  border-radius: 3%;
+  border-radius: 15px;
   background-color: rgba(250, 161, 52, 0.616);
 }
 
@@ -26,6 +26,7 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: rgb(250, 161, 52);
+  border-radius: 20px;
   padding-inline: 3%;
   margin-inline: 2%;
   margin-bottom: 1.5%;
