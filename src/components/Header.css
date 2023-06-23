@@ -1,8 +1,13 @@
 .Header {
   display: flex;
   justify-content: space-between;
-  min-width: 80%;
   align-items: center;
+  background-color: #de7a2e;
+  border-radius: 50px;
+  margin: 3%;
+  flex-direction: row;
+  font-size: calc(8px + 2vmin);
+  color: white;
+  padding: 0% 5%
 }
-
 
