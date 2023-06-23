@@ -1,4 +1,5 @@
 import NewExcercise from './NewExercise';
+import './AddExercise.css'
 
 export default function AddExercise(props) {
   const saveNewExerciseHandler = (enteredExerciseData) => {

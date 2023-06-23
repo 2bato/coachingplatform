@@ -7,28 +7,36 @@ import { useState } from 'react';
 
 const DUMMYexercises = [
   {
+    id: 1,
     movement: 'Low Bar Paused Squat',
     scheme: '1 set of 4',
     rpe: 7,
     weight: '215 kg',
+    day: 1,
   },
   {
+    id: 2,
     movement: 'Low Bar Comp Squat',
     scheme: '2 sets of 6',
     rpe: 6,
     weight: '175 kg',
+    day: 1,
   },
   {
+    id: 3,
     movement: 'Tempo Paused Bench',
     scheme: '3 sets of 7',
     rpe: 7,
     weight: '125 kg',
+    day: 1,
   },
   {
-    movement: 'Tempo Paused Bench ggggggggggggggggg',
+    id: 4,
+    movement: 'Cable Tricep Pushdowns',
     scheme: '3 sets of 7',
-    rpe: 7,
-    weight: '125 kg',
+    rpe: 8,
+    weight: '555 kg',
+    day: 1,
   },
 ];
 function App() {

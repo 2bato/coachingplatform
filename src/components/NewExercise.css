@@ -1,3 +1,81 @@
-.NewExercise {
-display: flex;
+.InputFields {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 2%;
+}
+.NewExercise-movement {
+  display: flex;
+  flex-direction: column;
+  max-width: 30%;
+}
+
+.NewExercise-scheme {
+  display: flex;
+  flex-direction: column;
+  max-width: 10%;
+}
+
+.NewExercise-rpe {
+  display: flex;
+  flex-direction: column;
+  max-width: 6%;
+}
+
+.NewExercise-weight {
+  display: flex;
+  flex-direction: column;
+  max-width: 10%;
+}
+
+.NewExercise-movement input {
+  border-radius: 8px;
+  background-color: rgb(250, 161, 52);
+  color: white;
+  border-color: white;
+  border-style: hidden;
+  font-size: calc(5px + 1.5vmin);
+}
+
+.NewExercise-scheme input {
+  border-radius: 8px;
+  background-color: rgb(250, 161, 52);
+  color: white;
+  border-color: white;
+  border-style: hidden;
+  font-size: calc(5px + 1.5vmin);
+}
+
+.NewExercise-rpe select {
+  font-size: calc(5px + 1.5vmin);
+  border-radius: 9px;
+  background-color: rgb(250, 161, 52);
+  color: white;
+  border-style: hidden;
+}
+
+.NewExercise-rpe option {
+  background-color: white;
+  color: black;
+}
+
+.NewExercise-weight input {
+  border-radius: 8px;
+  background-color: rgb(250, 161, 52);
+  color: white;
+  border-color: white;
+  border-style: hidden;
+  font-size: calc(5px + 1.5vmin);
+}
+
+.NewExercise-add button {
+  border-radius: 8px;
+  font-size: larger;
+  border-radius: 8px;
+  background-color: rgb(250, 161, 52);
+  color: white;
+  border-style: hidden;
+  font-size: calc(5px + 4vmin);
+  font-weight: 600;
+  margin-bottom: 2%;
 }

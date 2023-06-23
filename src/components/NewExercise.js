@@ -24,6 +24,7 @@ export default function NewExcercise(props) {
     event.preventDefault();
 
     const exerciseData = {
+      id: crypto.randomUUID(),
       movement: enteredMovement,
       scheme: enteredScheme,
       rpe: enteredRPE,
@@ -38,33 +39,42 @@ export default function NewExcercise(props) {
   };
   return (
     <form onSubmit={submitHandler} className="NewExercise">
-      <div className="NewExercise-movement">
-        <label>Movement</label>
-        <input
-          type="text"
-          value={enteredMovement}
-          onChange={movementChangeHandler}
-        />
-      </div>
-      <div className="NewExercise-scheme">
-        <label>Scheme</label>
-        <input
-          type="text"
-          value={enteredScheme}
-          onChange={schemeChangeHandler}
-        />
-      </div>
-      <div className="NewExercise-rpe">
-        <label>RPE</label>
-        <input type="text" value={enteredRPE} onChange={rpeChangeHandler} />
-      </div>
-      <div className="NewExercise-weight">
-        <label>Weight</label>
-        <input
-          type="text"
-          value={enteredWeight}
-          onChange={weightChangeHandler}
-        />
+      <div className="InputFields">
+        <div className="NewExercise-movement">
+          <label>Movement</label>
+          <input
+            type="text"
+            value={enteredMovement}
+            onChange={movementChangeHandler}
+          />
+        </div>
+        <div className="NewExercise-scheme">
+          <label>Scheme</label>
+          <input
+            type="text"
+            value={enteredScheme}
+            onChange={schemeChangeHandler}
+          />
+        </div>
+        <div className="NewExercise-rpe">
+          <label>RPE</label>
+          <select value={enteredRPE} onChange={rpeChangeHandler}>
+            <option value="" />
+            {Array.from(Array(10), (_, index) => (
+              <option key={index++} value={index++}>
+                {index++}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className="NewExercise-weight">
+          <label>Weight</label>
+          <input
+            type="text"
+            value={enteredWeight}
+            onChange={weightChangeHandler}
+          />
+        </div>
       </div>
       <div className="NewExercise-add">
         <button type="submit">Add</button>

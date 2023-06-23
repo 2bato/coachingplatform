@@ -11,7 +11,7 @@ function RpeDropdown({ rpe }) {
   };
 
   return (
-    <div>
+    <div className='RpeButton'>
       <select value={RPE} onChange={clickHandler}>
         {options.map((option) => (
           <option key={option} value={option}>
@@ -40,8 +40,8 @@ export default function Exercise({ props }) {
             <p>Weight</p>
           </div>
       </div>
-      {props.map((props, index) => (
-        <div key={index} className="Exercise-Item">
+      {props.map((props) => (
+        <div className="Exercise-Item" key={props.id} day={props.day}>
           <div className="Movement">
             <p>{props.movement}</p>
           </div>

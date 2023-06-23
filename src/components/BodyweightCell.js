@@ -7,7 +7,6 @@ export default function BodyweightCell() {
         placeholder="Bodyweight"
         size="10"
         type="text"
-        className="weightInput"
         contentEditable={true}
       />
     </div>
