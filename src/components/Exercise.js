@@ -1,5 +1,6 @@
 import './Exercise.css';
 import React, { useState } from 'react';
+import NewExcercise from './NewExercise';
 
 function RpeDropdown({ rpe }) {
   const [RPE, setRPE] = useState(rpe);
