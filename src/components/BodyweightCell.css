@@ -1,5 +1,12 @@
-.weightInput {
+.BodyweightCell input {
   text-align: center;
-  font-size: small;
+  font-size: medium;
   font-weight: bold;
+  color: black;
+  border-radius: 15px;
+  border-style: hidden;
+}
+
+.BodyweightCell :placeholder-shown {
+font-weight: 500;
 }

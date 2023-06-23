@@ -1,0 +1,13 @@
+.AddExercise {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: calc(5px + 2vmin);
+  color: white;
+  font-weight: 500;
+  margin: 3%;
+  border-radius: 15px;
+  background-color: rgba(250, 161, 52, 0.616);
+}
