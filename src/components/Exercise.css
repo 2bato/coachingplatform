@@ -15,7 +15,7 @@
 .Exercise-Label {
   display: grid;
   grid-template-columns: 35% 15% 10% 15%;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-evenly;
   padding-inline: 3%;
   margin-inline: 2%;

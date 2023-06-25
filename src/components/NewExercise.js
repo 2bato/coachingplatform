@@ -1,4 +1,4 @@
-import { useState, useContext} from 'react';
+import { useState, useContext } from 'react';
 import './NewExercise.css';
 import { TabContext } from './Tabs/TabProvider';
 
@@ -9,6 +9,7 @@ export default function NewExcercise(props) {
   const [enteredScheme, setEnteredScheme] = useState('');
   const [enteredRPE, setEnteredRPE] = useState('');
   const [enteredWeight, setEnteredWeight] = useState('');
+  const [enteredVisualize, setEnteredVisualize] = useState(false);
 
   const movementChangeHandler = (event) => {
     setEnteredMovement(event.target.value);
@@ -23,6 +24,10 @@ export default function NewExcercise(props) {
     setEnteredWeight(event.target.value);
   };
 
+  const visualizeChangeHandler = (event) => {
+    setEnteredVisualize(event.target.checked);
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -32,7 +37,8 @@ export default function NewExcercise(props) {
       scheme: enteredScheme,
       rpe: enteredRPE,
       weight: enteredWeight,
-      day: context.activeTab
+      day: context.activeTab,
+      visualize: enteredVisualize,
     };
 
     props.onSaveNewExercise(exerciseData);
@@ -40,6 +46,7 @@ export default function NewExcercise(props) {
     setEnteredScheme('');
     setEnteredRPE('');
     setEnteredWeight('');
+    setEnteredVisualize(false);
   };
   return (
     <form onSubmit={submitHandler} className="NewExercise">
@@ -77,6 +84,14 @@ export default function NewExcercise(props) {
             type="number"
             value={enteredWeight}
             onChange={weightChangeHandler}
+          />
+        </div>
+        <div className="NewExercise-visualize">
+          <label>Visualize</label>
+          <input
+            type="checkbox"
+            value={enteredVisualize}
+            onChange={visualizeChangeHandler}
           />
         </div>
       </div>

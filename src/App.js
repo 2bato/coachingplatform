@@ -11,7 +11,8 @@ const DUMMYexercises = [
     scheme: '1 set of 4',
     rpe: 7,
     weight: 85,
-    day: 1,
+    day: 0,
+    visualize: true
   },
   {
     id: 2,
@@ -19,7 +20,8 @@ const DUMMYexercises = [
     scheme: '2 sets of 6',
     rpe: 6,
     weight: 195,
-    day: 1,
+    day: 0,
+    visualize: true
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ const DUMMYexercises = [
     rpe: 7,
     weight: 257.5,
     day: 1,
+    visualize: true
   },
   {
     id: 4,
@@ -35,7 +38,8 @@ const DUMMYexercises = [
     scheme: '3 sets of 7',
     rpe: 8,
     weight: 267.5,
-    day: 1,
+    day: 2,
+    visualize: false
   },
 ];
 function App() {
@@ -55,7 +59,7 @@ function App() {
         <Header WeekNumber={WeekNumber} />
       </div>
       <div className="App-exercise">
-        <DayTab props={exercises} />{' '}
+        <DayTab props={exercises} />
         <AddExercise onAddNewExercise={addExerciseHandler} />
       </div>
     </div>

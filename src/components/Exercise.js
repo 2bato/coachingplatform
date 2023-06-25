@@ -41,7 +41,12 @@ export default function Exercise({ props }) {
         </div>
       </div>
       {props.map((props) => (
-        <div className="Exercise-Item" key={props.id} day={props.day}>
+        <div
+          className="Exercise-Item"
+          key={props.id}
+          day={props.day}
+          visualize={props.visualize}
+        >
           <div className="Movement">
             <p>{props.movement}</p>
           </div>
@@ -52,8 +57,17 @@ export default function Exercise({ props }) {
             <RpeDropdown rpe={props.rpe} />
           </div>
           <div className="Weight">
-            <p>{props.weight}kg</p>
-            <WeightVisualizer className="WeightVisualizer" weight={props.weight} />
+            {props.visualize === true ? (
+              <div>
+                <p>{props.weight}kg</p>
+                <WeightVisualizer
+                  className="WeightVisualizer"
+                  weight={props.weight}
+                />
+              </div>
+            ) : (
+              <p>{props.weight}kg</p>
+            )}
           </div>
         </div>
       ))}

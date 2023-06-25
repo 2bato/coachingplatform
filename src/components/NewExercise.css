@@ -8,24 +8,31 @@
   display: flex;
   flex-direction: column;
   max-width: 30%;
+  gap: 1.5vh;
 }
 
 .NewExercise-scheme {
   display: flex;
   flex-direction: column;
   max-width: 10%;
+  gap: 1.5vh;
+
 }
 
 .NewExercise-rpe {
   display: flex;
   flex-direction: column;
   max-width: 6%;
+  gap: 1.5vh;
+
 }
 
 .NewExercise-weight {
   display: flex;
   flex-direction: column;
   max-width: 10%;
+  gap: 1.5vh;
+
 }
 
 .NewExercise-movement input {
@@ -75,7 +82,7 @@
   background-color: rgb(250, 161, 52);
   color: white;
   border-style: hidden;
-  font-size: calc(5px + 4vmin);
+  font-size: calc(5px + 3vmin);
   font-weight: 600;
   margin-bottom: 2%;
   cursor: pointer;
