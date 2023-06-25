@@ -1,9 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Exercise from './components/Exercise';
 import AddExercise from './components/AddExercise';
 import { useState } from 'react';
+import DayTab from './components/DayTab';
 
 const DUMMYexercises = [
   {
@@ -11,7 +11,7 @@ const DUMMYexercises = [
     movement: 'Low Bar Paused Squat',
     scheme: '1 set of 4',
     rpe: 7,
-    weight: '215 kg',
+    weight: 85,
     day: 1,
   },
   {
@@ -19,7 +19,7 @@ const DUMMYexercises = [
     movement: 'Low Bar Comp Squat',
     scheme: '2 sets of 6',
     rpe: 6,
-    weight: '175 kg',
+    weight: 195,
     day: 1,
   },
   {
@@ -27,7 +27,7 @@ const DUMMYexercises = [
     movement: 'Tempo Paused Bench',
     scheme: '3 sets of 7',
     rpe: 7,
-    weight: '125 kg',
+    weight: 257.5,
     day: 1,
   },
   {
@@ -35,7 +35,7 @@ const DUMMYexercises = [
     movement: 'Cable Tricep Pushdowns',
     scheme: '3 sets of 7',
     rpe: 8,
-    weight: '555 kg',
+    weight: 267.5,
     day: 1,
   },
 ];
@@ -54,6 +54,7 @@ function App() {
     <div className="App">
       <div className="App-header">
         <Header WeekNumber={WeekNumber} />
+        <DayTab props={exercises} />
       </div>
       <div className="App-exercise">
         <Exercise props={exercises} />

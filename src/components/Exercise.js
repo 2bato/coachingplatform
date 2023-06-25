@@ -1,6 +1,6 @@
 import './Exercise.css';
 import React, { useState } from 'react';
-import NewExcercise from './NewExercise';
+import WeightVisualizer from './WeightVisualizer';
 
 function RpeDropdown({ rpe }) {
   const [RPE, setRPE] = useState(rpe);
@@ -11,7 +11,7 @@ function RpeDropdown({ rpe }) {
   };
 
   return (
-    <div className='RpeButton'>
+    <div className="RpeButton">
       <select value={RPE} onChange={clickHandler}>
         {options.map((option) => (
           <option key={option} value={option}>
@@ -26,19 +26,19 @@ function RpeDropdown({ rpe }) {
 export default function Exercise({ props }) {
   return (
     <div className="Exercise">
-      <div className='Exercise-Label'>
-      <div className="Movement">
-            <p>Movement</p>
-          </div>
-          <div className="Scheme">
-            <p>Scheme</p>
-          </div>
-          <div className="RpeDropdown">
-            <p>RPE</p>
-          </div>
-          <div className="Weight">
-            <p>Weight</p>
-          </div>
+      <div className="Exercise-Label">
+        <div className="Movement">
+          <p>Movement</p>
+        </div>
+        <div className="Scheme">
+          <p>Scheme</p>
+        </div>
+        <div className="RpeDropdown">
+          <p>RPE</p>
+        </div>
+        <div className="Weight">
+          <p>Weight</p>
+        </div>
       </div>
       {props.map((props) => (
         <div className="Exercise-Item" key={props.id} day={props.day}>
@@ -52,7 +52,8 @@ export default function Exercise({ props }) {
             <RpeDropdown rpe={props.rpe} />
           </div>
           <div className="Weight">
-            <p>{props.weight}</p>
+            <p>{props.weight}kg</p>
+            <WeightVisualizer className="WeightVisualizer" weight={props.weight} />
           </div>
         </div>
       ))}

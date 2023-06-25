@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useContext} from 'react';
 import './NewExercise.css';
+import { TabContext } from './Context/TabProvider';
 
 export default function NewExcercise(props) {
+  const context = useContext(TabContext);
+
   const [enteredMovement, setEnteredMovement] = useState('');
   const [enteredScheme, setEnteredScheme] = useState('');
   const [enteredRPE, setEnteredRPE] = useState('');
@@ -29,6 +32,7 @@ export default function NewExcercise(props) {
       scheme: enteredScheme,
       rpe: enteredRPE,
       weight: enteredWeight,
+      day: context.activeTab
     };
 
     props.onSaveNewExercise(exerciseData);
@@ -70,7 +74,7 @@ export default function NewExcercise(props) {
         <div className="NewExercise-weight">
           <label>Weight</label>
           <input
-            type="text"
+            type="number"
             value={enteredWeight}
             onChange={weightChangeHandler}
           />
