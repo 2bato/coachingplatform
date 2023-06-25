@@ -1,0 +1,39 @@
+.Overall {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 3%;
+}
+.Tabs {
+  display: flex;
+  background-color: rgba(250, 161, 52, 0.623);
+  justify-content: space-evenly;
+  border-radius: 15px 15px 0 0;
+}
+
+.Tabs button {
+    color: white;
+  flex: 1 0 auto;
+  background-color: inherit;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding-block: 2vh;
+  transition: 0.3s;
+  font-size: calc(8px + 2vmin);
+  font-weight: bold;
+}
+
+.Tabs button:first-child {
+  border-top-left-radius: 15px;
+}
+
+.Tabs button:last-child {
+  border-top-right-radius: 15px;
+}
+.Tabs button:hover {
+  background-color:  rgba(250, 161, 52, 0.616)
+}
+
+.Tabs button.active {
+  background-color:  rgba(250, 161, 52)
+}
