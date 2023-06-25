@@ -11,7 +11,7 @@
 }
 
 .Tabs button {
-    color: white;
+  color: white;
   flex: 1 0 auto;
   background-color: inherit;
   border: none;
@@ -31,9 +31,23 @@
   border-top-right-radius: 15px;
 }
 .Tabs button:hover {
-  background-color:  rgba(250, 161, 52, 0.616)
+  background-color: rgba(250, 161, 52, 0.616);
 }
 
 .Tabs button.active {
-  background-color:  rgba(250, 161, 52)
+  background-color: rgba(250, 161, 52);
+}
+
+.Tab-content {
+  background-color: rgba(250, 161, 52);
+  font-weight: bold;
+  font-size: calc(8px + 2vmin);
+  color: white;
+}
+
+.Tab-content p {
+  margin-bottom: 5%;
+}
+.image {
+  margin: 8% 0 2% 0;
 }
