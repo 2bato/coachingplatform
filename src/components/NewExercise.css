@@ -78,4 +78,5 @@
   font-size: calc(5px + 4vmin);
   font-weight: 600;
   margin-bottom: 2%;
+  cursor: pointer;
 }

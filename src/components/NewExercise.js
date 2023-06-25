@@ -1,6 +1,6 @@
 import { useState, useContext} from 'react';
 import './NewExercise.css';
-import { TabContext } from './Context/TabProvider';
+import { TabContext } from './Tabs/TabProvider';
 
 export default function NewExcercise(props) {
   const context = useContext(TabContext);

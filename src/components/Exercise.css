@@ -6,14 +6,15 @@
   font-size: calc(5px + 2vmin);
   font-weight: bold;
   color: white;
-  margin: 3%;
   border-radius: 15px;
-  background-color: rgba(250, 161, 52, 0.616);
+  background-color: rgba(250, 161, 52);
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
 }
 
 .Exercise-Label {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 35% 15% 10% 15%;
   align-items: center;
   justify-content: space-evenly;
   padding-inline: 3%;
@@ -21,11 +22,12 @@
 }
 
 .Exercise-Item {
-  display: flex;
+  display: grid;
+  grid-template-columns: 35% 15% 10% 15%;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
-  background-color: rgb(250, 161, 52);
+  background-color: rgba(255, 195, 122, 0.842);
   border-radius: 20px;
   padding-inline: 3%;
   margin-inline: 2%;
@@ -36,7 +38,7 @@
   font-size: calc(5px + 1.5vmin);
   font-weight: bold;
   border-radius: 9px;
-  background-color: rgba(235, 208, 175, 0.616);
+  background-color: rgba(250, 161, 52);
   color: white;
   border-style: hidden;
 }
@@ -46,17 +48,6 @@
   color: black;
 }
 
-.Movement {
-  width: 30%;
-}
-
-.Scheme {
-  width: 10%;
-}
-
-.RpeDropdown {
-  width: 6%;
-}
 
 .Weight {
   display: flex;

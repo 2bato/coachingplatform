@@ -1,22 +1,30 @@
-import React, { useContext } from 'react';
-import './DayTabs.css';
+import React, { useContext, useState } from 'react';
+import './DayTab.css';
 import Exercise from './Exercise';
-import { TabContext } from './Context/TabProvider';
+import { TabContext } from './Tabs/TabProvider';
 
 const DayTab = ({ props }) => {
   const { activeTab, switchTab } = useContext(TabContext);
   const tabContent = [
     <div>
-      1
-      <Exercise props={props} />
-    </div>,
-    <div>2 </div>,
-    <div>
-      3
-      <Exercise props={props} />
+      <Exercise
+        props={props.filter((exercise) => exercise.day === activeTab)}
+      />
     </div>,
     <div>
-      4<Exercise props={props} />
+      <Exercise
+        props={props.filter((exercise) => exercise.day === activeTab)}
+      />
+    </div>,
+    <div>
+      <Exercise
+        props={props.filter((exercise) => exercise.day === activeTab)}
+      />
+    </div>,
+    <div>
+      <Exercise
+        props={props.filter((exercise) => exercise.day === activeTab)}
+      />
     </div>,
   ];
 
@@ -25,8 +33,8 @@ const DayTab = ({ props }) => {
   };
 
   return (
-    <div>
-      <div className="tab-buttons">
+    <div className="Overall">
+      <div className="Tabs">
         {tabContent.map((cotent, index) => (
           <button
             key={index}

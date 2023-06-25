@@ -1,6 +1,5 @@
 import './App.css';
 import Header from './components/Header';
-import Exercise from './components/Exercise';
 import AddExercise from './components/AddExercise';
 import { useState } from 'react';
 import DayTab from './components/DayTab';
@@ -54,10 +53,9 @@ function App() {
     <div className="App">
       <div className="App-header">
         <Header WeekNumber={WeekNumber} />
-        <DayTab props={exercises} />
       </div>
       <div className="App-exercise">
-        <Exercise props={exercises} />
+        <DayTab props={exercises} />{' '}
         <AddExercise onAddNewExercise={addExerciseHandler} />
       </div>
     </div>
