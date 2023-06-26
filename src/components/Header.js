@@ -1,7 +1,7 @@
 import './Header.css';
-import BodyweightCell from './BodyweightCell';
+import BodyweightCell from './MetricsTracking/BodyweightCell';
 
-export default function Header({ WeekNumber }) {
+const Header = ({WeekNumber}) => {
   return (
     <div className="Header">
       <div className="WeekNumber">
@@ -12,4 +12,6 @@ export default function Header({ WeekNumber }) {
       </div>
     </div>
   );
-}
+};
+
+export default Header;

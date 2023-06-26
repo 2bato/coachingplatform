@@ -23,7 +23,11 @@ function RpeDropdown({ rpe }) {
   );
 }
 
-export default function Exercise({ props }) {
+export default function Exercise({ props, onRemoveExercise }) {
+  const handleRemoveExercise = (id) => {
+    onRemoveExercise(id);
+  };
+
   return (
     <div className="Exercise">
       <div className="Exercise-Label">
@@ -57,17 +61,31 @@ export default function Exercise({ props }) {
             <RpeDropdown rpe={props.rpe} />
           </div>
           <div className="Weight">
-            {props.visualize === true ? (
+            {props.$visualize === true ? (
               <div>
-                <p>{props.weight}kg</p>
+                {props.weight == 0 ? (
+                  <p>Bodyweight</p>
+                ) : (
+                  <p>{props.weight}kg</p>
+                )}
+
                 <WeightVisualizer
                   className="WeightVisualizer"
                   weight={props.weight}
                 />
               </div>
             ) : (
-              <p>{props.weight}kg</p>
+              <div>
+                {props.weight == 0 ? (
+                  <p>BW</p>
+                ) : (
+                  <p>{props.weight}kg</p>
+                )}
+              </div>
             )}
+          </div>
+          <div className="Delete">
+            <button onClick={() => handleRemoveExercise(props.id)}>X</button>
           </div>
         </div>
       ))}

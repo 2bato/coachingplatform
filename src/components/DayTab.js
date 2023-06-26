@@ -4,7 +4,7 @@ import Exercise from './Exercises/Exercise';
 import { TabContext } from './Context/TabProvider';
 import image from '../assets/corgi.png';
 
-const DayTab = ({ props }) => {
+const DayTab = ({ props, onRemoveExercise }) => {
   const { activeTab, switchTab } = useContext(TabContext);
   const dayNames = ['Mon', 'Tues', 'Wed', 'Thurs', 'Fri', 'Sat', 'Sun'];
 
@@ -34,6 +34,7 @@ const DayTab = ({ props }) => {
         ) : (
           <Exercise
             props={props.filter((exercise) => exercise.day === activeTab)}
+            onRemoveExercise={onRemoveExercise}
           />
         )}
       </div>

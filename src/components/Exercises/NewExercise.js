@@ -7,8 +7,8 @@ export default function NewExcercise(props) {
 
   const [enteredMovement, setEnteredMovement] = useState('');
   const [enteredScheme, setEnteredScheme] = useState('');
-  const [enteredRPE, setEnteredRPE] = useState('');
-  const [enteredWeight, setEnteredWeight] = useState('');
+  const [enteredRPE, setEnteredRPE] = useState(0);
+  const [enteredWeight, setEnteredWeight] = useState(0);
   const [enteredVisualize, setEnteredVisualize] = useState(false);
 
   const movementChangeHandler = (event) => {
@@ -38,7 +38,7 @@ export default function NewExcercise(props) {
       rpe: enteredRPE,
       weight: enteredWeight,
       day: context.activeTab,
-      visualize: enteredVisualize,
+      $visualize: enteredVisualize,
     };
 
     props.onSaveNewExercise(exerciseData);
@@ -93,7 +93,7 @@ export default function NewExcercise(props) {
             <label>Loader</label>
             <input
               type="checkbox"
-              value={enteredVisualize}
+              checked={enteredVisualize}
               onChange={visualizeChangeHandler}
             />
           </div>
