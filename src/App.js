@@ -3,6 +3,7 @@ import Header from './components/Header';
 import AddExercise from './components/Exercises/AddExercise';
 import { useState } from 'react';
 import DayTab from './components/DayTab';
+import WeightChart from './components/MetricsTracking/WeightChart';
 
 const DUMMYexercises = [
   {
@@ -12,7 +13,7 @@ const DUMMYexercises = [
     rpe: 7,
     weight: 85,
     day: 0,
-    visualize: true
+    $visualize: true,
   },
   {
     id: 2,
@@ -21,7 +22,7 @@ const DUMMYexercises = [
     rpe: 6,
     weight: 195,
     day: 0,
-    visualize: true
+    $visualize: true,
   },
   {
     id: 3,
@@ -30,7 +31,7 @@ const DUMMYexercises = [
     rpe: 7,
     weight: 257.5,
     day: 1,
-    visualize: true
+    $visualize: true,
   },
   {
     id: 4,
@@ -39,9 +40,10 @@ const DUMMYexercises = [
     rpe: 8,
     weight: 267.5,
     day: 2,
-    visualize: false
+    $visualize: false,
   },
 ];
+
 function App() {
   const WeekNumber = '1';
 
@@ -53,14 +55,21 @@ function App() {
     });
   };
 
+  const removeExerciseHandler = (exerciseId) => {
+    setExercises((prevExercises) => {
+      return prevExercises.filter((exercise) => exercise.id !== exerciseId);
+    });
+  };
+
   return (
     <div className="App">
       <div className="App-header">
         <Header WeekNumber={WeekNumber} />
       </div>
       <div className="App-exercise">
-        <DayTab props={exercises} />
+        <DayTab props={exercises} onRemoveExercise={removeExerciseHandler} />
         <AddExercise onAddNewExercise={addExerciseHandler} />
+        {console.log(exercises)}
       </div>
     </div>
   );
