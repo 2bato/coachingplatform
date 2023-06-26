@@ -1,37 +1,56 @@
 .InputFields {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
   margin: 2%;
 }
+
+.first-row {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin: 1%;
+}
+
+.second-row {
+  display: grid;
+  grid-template-columns: 20% 40% 10%;
+  margin: 1%;
+}
+
 .NewExercise-movement {
   display: flex;
   flex-direction: column;
-  max-width: 30%;
   gap: 1.5vh;
+  margin-inline: 2vw;
 }
 
 .NewExercise-scheme {
   display: flex;
   flex-direction: column;
-  max-width: 10%;
   gap: 1.5vh;
-
+  margin-inline: 2vw;
 }
 
 .NewExercise-rpe {
   display: flex;
   flex-direction: column;
-  max-width: 6%;
   gap: 1.5vh;
+  margin-inline: 2vw;
 
 }
 
 .NewExercise-weight {
   display: flex;
   flex-direction: column;
-  max-width: 10%;
   gap: 1.5vh;
+  margin-inline: 2vw;
+
+}
+
+.NewExercise-visualize {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh;
+  margin-inline: 2vw;
 
 }
 

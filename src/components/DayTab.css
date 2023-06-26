@@ -43,6 +43,7 @@
   font-weight: bold;
   font-size: calc(8px + 2vmin);
   color: white;
+  border-radius: 0 0 15px 15px;
 }
 
 .Tab-content p {
