@@ -1,6 +1,6 @@
 import { useState, useContext } from 'react';
 import './NewExercise.css';
-import { TabContext } from './Tabs/TabProvider';
+import { TabContext } from '../Context/TabProvider';
 
 export default function NewExcercise(props) {
   const context = useContext(TabContext);
@@ -51,48 +51,52 @@ export default function NewExcercise(props) {
   return (
     <form onSubmit={submitHandler} className="NewExercise">
       <div className="InputFields">
-        <div className="NewExercise-movement">
-          <label>Movement</label>
-          <input
-            type="text"
-            value={enteredMovement}
-            onChange={movementChangeHandler}
-          />
+        <div className="first-row">
+          <div className="NewExercise-movement">
+            <label>Movement</label>
+            <input
+              type="text"
+              value={enteredMovement}
+              onChange={movementChangeHandler}
+            />
+          </div>
+          <div className="NewExercise-scheme">
+            <label>Scheme</label>
+            <input
+              type="text"
+              value={enteredScheme}
+              onChange={schemeChangeHandler}
+            />
+          </div>
         </div>
-        <div className="NewExercise-scheme">
-          <label>Scheme</label>
-          <input
-            type="text"
-            value={enteredScheme}
-            onChange={schemeChangeHandler}
-          />
-        </div>
-        <div className="NewExercise-rpe">
-          <label>RPE</label>
-          <select value={enteredRPE} onChange={rpeChangeHandler}>
-            <option value="" />
-            {Array.from(Array(10), (_, index) => (
-              <option key={index++} value={index++}>
-                {index++}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="NewExercise-weight">
-          <label>Weight</label>
-          <input
-            type="number"
-            value={enteredWeight}
-            onChange={weightChangeHandler}
-          />
-        </div>
-        <div className="NewExercise-visualize">
-          <label>Visualize</label>
-          <input
-            type="checkbox"
-            value={enteredVisualize}
-            onChange={visualizeChangeHandler}
-          />
+        <div className="second-row">
+          <div className="NewExercise-rpe">
+            <label>RPE</label>
+            <select value={enteredRPE} onChange={rpeChangeHandler}>
+              <option value="" />
+              {Array.from(Array(10), (_, index) => (
+                <option key={index++} value={index++}>
+                  {index++}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="NewExercise-weight">
+            <label>Weight</label>
+            <input
+              type="number"
+              value={enteredWeight}
+              onChange={weightChangeHandler}
+            />
+          </div>
+          <div className="NewExercise-visualize">
+            <label>Loader</label>
+            <input
+              type="checkbox"
+              value={enteredVisualize}
+              onChange={visualizeChangeHandler}
+            />
+          </div>
         </div>
       </div>
       <div className="NewExercise-add">

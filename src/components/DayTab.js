@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import './DayTab.css';
-import Exercise from './Exercise';
-import { TabContext } from './Tabs/TabProvider';
+import Exercise from './Exercises/Exercise';
+import { TabContext } from './Context/TabProvider';
 import image from '../assets/corgi.png';
 
 const DayTab = ({ props }) => {

@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import AddExercise from './components/AddExercise';
+import AddExercise from './components/Exercises/AddExercise';
 import { useState } from 'react';
 import DayTab from './components/DayTab';
 
