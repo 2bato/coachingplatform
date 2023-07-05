@@ -7,8 +7,8 @@ export default function NewExcercise(props) {
 
   const [enteredMovement, setEnteredMovement] = useState('');
   const [enteredScheme, setEnteredScheme] = useState('');
-  const [enteredRPE, setEnteredRPE] = useState(0);
-  const [enteredWeight, setEnteredWeight] = useState(0);
+  const [enteredRPE, setEnteredRPE] = useState('');
+  const [enteredWeight, setEnteredWeight] = useState('');
   const [enteredVisualize, setEnteredVisualize] = useState(false);
 
   const movementChangeHandler = (event) => {

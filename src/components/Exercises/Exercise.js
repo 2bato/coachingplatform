@@ -64,7 +64,7 @@ export default function Exercise({ props, onRemoveExercise }) {
             {props.$visualize === true ? (
               <div>
                 {props.weight == 0 ? (
-                  <p>Bodyweight</p>
+                  <p>BW</p>
                 ) : (
                   <p>{props.weight}kg</p>
                 )}
