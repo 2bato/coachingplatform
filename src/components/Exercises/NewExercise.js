@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import './NewExercise.css';
 import { TabContext } from '../Context/TabProvider';
 
-export default function NewExcercise(props) {
+const NewExcercise = (props) => {
   const context = useContext(TabContext);
 
   const [enteredMovement, setEnteredMovement] = useState('');
@@ -120,4 +120,6 @@ export default function NewExcercise(props) {
       </div>
     </form>
   );
-}
+};
+
+export default NewExcercise;
