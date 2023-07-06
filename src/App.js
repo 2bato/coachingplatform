@@ -14,6 +14,7 @@ const DUMMYexercises = [
     weight: 85,
     day: 0,
     $visualize: true,
+    notes: 'Cue back extension, slow out of the hole'
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ const DUMMYexercises = [
     weight: 195,
     day: 0,
     $visualize: true,
+    ntoes: ''
   },
   {
     id: 3,
@@ -32,6 +34,7 @@ const DUMMYexercises = [
     weight: 257.5,
     day: 1,
     $visualize: true,
+    notes: ''
   },
   {
     id: 4,
@@ -41,10 +44,11 @@ const DUMMYexercises = [
     weight: 267.5,
     day: 2,
     $visualize: false,
+    notes: ''
   },
 ];
 
-function App() {
+const App = () => {
   const WeekNumber = '1';
 
   const [exercises, setExercises] = useState(DUMMYexercises);

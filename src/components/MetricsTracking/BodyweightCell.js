@@ -1,6 +1,6 @@
 import './BodyweightCell.css';
 
-export default function BodyweightCell() {
+const BodyweightCell = () => {
   return (
     <div className="BodyweightCell">
       <input
@@ -11,4 +11,6 @@ export default function BodyweightCell() {
       />
     </div>
   );
-}
+};
+
+export default BodyweightCell;

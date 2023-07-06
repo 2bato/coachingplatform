@@ -12,7 +12,7 @@ const Plate = ({ color, width, height }) => (
   />
 );
 
-export default function WeightVisualizer({ weight }) {
+const WeightVisualizer = ({ weight }) => {
   const plates = [
     { value: 25, color: 'red', width: 0.6, height: 5 },
     { value: 20, color: 'blue', width: 0.6, height: 5 },
@@ -40,4 +40,6 @@ export default function WeightVisualizer({ weight }) {
   };
 
   return <div className="WeightVisualizer">{renderPlates()}</div>;
-}
+};
+
+export default WeightVisualizer;

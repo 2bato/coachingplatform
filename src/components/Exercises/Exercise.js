@@ -2,7 +2,7 @@ import './Exercise.css';
 import React, { useState } from 'react';
 import WeightVisualizer from './WeightVisualizer';
 
-function RpeDropdown({ rpe }) {
+const RpeDropdown = ({ rpe }) => {
   const [RPE, setRPE] = useState(rpe);
   const [options] = useState(Array.from(Array(10), (_, index) => ++index));
 
@@ -21,9 +21,9 @@ function RpeDropdown({ rpe }) {
       </select>
     </div>
   );
-}
+};
 
-export default function Exercise({ props, onRemoveExercise }) {
+const Exercise = ({ props, onRemoveExercise }) => {
   const handleRemoveExercise = (id) => {
     onRemoveExercise(id);
   };
@@ -63,11 +63,7 @@ export default function Exercise({ props, onRemoveExercise }) {
           <div className="Weight">
             {props.$visualize === true ? (
               <div>
-                {props.weight === 0 ? (
-                  <p>BW</p>
-                ) : (
-                  <p>{props.weight}kg</p>
-                )}
+                {props.weight === 0 ? <p>BW</p> : <p>{props.weight}kg</p>}
 
                 <WeightVisualizer
                   className="WeightVisualizer"
@@ -76,19 +72,18 @@ export default function Exercise({ props, onRemoveExercise }) {
               </div>
             ) : (
               <div>
-                {props.weight === 0 ? (
-                  <p>BW</p>
-                ) : (
-                  <p>{props.weight}kg</p>
-                )}
+                {props.weight === 0 ? <p>BW</p> : <p>{props.weight}kg</p>}
               </div>
             )}
           </div>
           <div className="Delete">
             <button onClick={() => handleRemoveExercise(props.id)}>X</button>
           </div>
+          <div className="Notes"></div>
         </div>
       ))}
     </div>
   );
-}
+};
+
+export default Exercise;
