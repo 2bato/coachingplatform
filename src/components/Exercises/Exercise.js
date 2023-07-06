@@ -63,7 +63,7 @@ export default function Exercise({ props, onRemoveExercise }) {
           <div className="Weight">
             {props.$visualize === true ? (
               <div>
-                {props.weight == 0 ? (
+                {props.weight === 0 ? (
                   <p>BW</p>
                 ) : (
                   <p>{props.weight}kg</p>
@@ -76,7 +76,7 @@ export default function Exercise({ props, onRemoveExercise }) {
               </div>
             ) : (
               <div>
-                {props.weight == 0 ? (
+                {props.weight === 0 ? (
                   <p>BW</p>
                 ) : (
                   <p>{props.weight}kg</p>

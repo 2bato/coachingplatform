@@ -10,6 +10,7 @@ export default function NewExcercise(props) {
   const [enteredRPE, setEnteredRPE] = useState('');
   const [enteredWeight, setEnteredWeight] = useState('');
   const [enteredVisualize, setEnteredVisualize] = useState(false);
+  const [enteredNotes, setEnteredNotes] = useState('');
 
   const movementChangeHandler = (event) => {
     setEnteredMovement(event.target.value);
@@ -28,6 +29,10 @@ export default function NewExcercise(props) {
     setEnteredVisualize(event.target.checked);
   };
 
+  const notesChangeHandler = (event) => {
+    setEnteredNotes(event.target.value);
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -39,6 +44,7 @@ export default function NewExcercise(props) {
       weight: enteredWeight,
       day: context.activeTab,
       $visualize: enteredVisualize,
+      notes: enteredNotes,
     };
 
     props.onSaveNewExercise(exerciseData);
@@ -47,7 +53,9 @@ export default function NewExcercise(props) {
     setEnteredRPE('');
     setEnteredWeight('');
     setEnteredVisualize(false);
+    setEnteredNotes('');
   };
+
   return (
     <form onSubmit={submitHandler} className="NewExercise">
       <div className="InputFields">
@@ -95,6 +103,14 @@ export default function NewExcercise(props) {
               type="checkbox"
               checked={enteredVisualize}
               onChange={visualizeChangeHandler}
+            />
+          </div>
+          <div className="NewExercise-notes">
+            <label>Notes</label>
+            <input
+              type="text"
+              checked={enteredNotes}
+              onChange={notesChangeHandler}
             />
           </div>
         </div>
