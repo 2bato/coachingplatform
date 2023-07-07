@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import './DayTab.css';
 import Exercise from './Exercises/Exercise';
 import { TabContext } from './Context/TabProvider';
-import image from '../assets/corgi.png';
+import corgi from '../assets/corgi.png';
 
 const DayTab = ({ props, onRemoveExercise }) => {
   const { activeTab, switchTab } = useContext(TabContext);
@@ -28,7 +28,7 @@ const DayTab = ({ props, onRemoveExercise }) => {
       <div className="Tab-content">
         {props.filter((exercise) => exercise.day === activeTab).length === 0 ? (
           <div>
-            <img src={image} className="image" />
+            <img src={corgi} className="corgi" />
             <p>Rest day!</p>
           </div>
         ) : (

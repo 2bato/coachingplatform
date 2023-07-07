@@ -8,6 +8,12 @@
   flex-direction: row;
   font-size: calc(8px + 2vmin);
   color: white;
-  padding: 0% 5%;
+  padding: 0 5%;
 }
 
+.corgiheader {
+  position: relative;
+  height: 7vh;
+  padding-top: 9%;
+  padding-right: 1vw;
+}
