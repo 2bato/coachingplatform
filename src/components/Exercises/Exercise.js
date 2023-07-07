@@ -1,27 +1,7 @@
 import './Exercise.css';
 import React, { useState } from 'react';
 import WeightVisualizer from './WeightVisualizer';
-
-const RpeDropdown = ({ rpe }) => {
-  const [RPE, setRPE] = useState(rpe);
-  const [options] = useState(Array.from(Array(10), (_, index) => ++index));
-
-  const clickHandler = (event) => {
-    setRPE(event.target.value);
-  };
-
-  return (
-    <div className="RpeButton">
-      <select value={RPE} onChange={clickHandler}>
-        {options.map((option) => (
-          <option key={option} value={option}>
-            {option}
-          </option>
-        ))}
-      </select>
-    </div>
-  );
-};
+import RpeDropdown from './RpeDropdown';
 
 const Exercise = ({ props, onRemoveExercise }) => {
   const handleRemoveExercise = (id) => {
