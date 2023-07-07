@@ -105,15 +105,14 @@ const NewExcercise = (props) => {
               onChange={visualizeChangeHandler}
             />
           </div>
-          <div className="NewExercise-notes">
+        </div>
+        <div className="NewExercise-notes">
             <label>Notes</label>
-            <input
-              type="text"
+            <textarea
               value={enteredNotes}
               onChange={notesChangeHandler}
             />
           </div>
-        </div>
       </div>
       <div className="NewExercise-add">
         <button type="submit">Add</button>
