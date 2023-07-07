@@ -34,7 +34,7 @@
   background-color: rgba(250, 161, 52, 0.616);
 }
 
-.Tabs button.active {
+.Tabs button.activeTab {
   background-color: rgba(250, 161, 52);
 }
 

@@ -21,18 +21,29 @@
   margin-inline: 2%;
 }
 
-.Exercise-Item {
-  display: grid;
-  grid-template-columns: 35% 15% 10% 15% 5%;
-  flex-direction: row;
-  align-items: first baseline;
-  justify-content: space-evenly;
+.Exercise-Card {
   background-color: rgba(255, 195, 122, 0.842);
   border-radius: 20px;
-  padding-inline: 3%;
-  padding-bottom: 1%;
   margin-inline: 2%;
   margin-bottom: 2%;
+  padding-bottom: 2%;
+}
+.Exercise-Info {
+  display: grid;
+  grid-template-columns: 35% 15% 11% 15%;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  padding-inline: 3% 0%;
+  padding-bottom: 1%;
+}
+
+.Exercise-Item {
+  display: grid;
+  grid-template-columns: 95% 5%;
+  align-items: center;
+  padding-right: 5%;
 }
 
 .RpeButton select {
@@ -59,8 +70,27 @@
   cursor: pointer;
   border-style: hidden;
   background-color: transparent;
+  border-radius: 100%;
   color: white;
-  font-size: 2vmin;
-  padding-block: 0.4vh;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  font-size: 5vmin;
+  padding-inline: 0%;
+  padding-top: 2vh;
+}
+
+.Notes {
+  font-size: calc(5px + 1.5vmin);
+  font-weight: 450;
+}
+
+.Notes button {
+  background-color: transparent;
+  border-style: hidden;
+  color: white;
+  font-size: 5vmin;
+  padding: 0%;
+}
+
+button.active {
+  transform-origin: 0% 40%;
+  transform: rotateX(180deg);
 }

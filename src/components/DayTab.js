@@ -18,7 +18,7 @@ const DayTab = ({ props, onRemoveExercise }) => {
         {dayNames.map((day, index) => (
           <button
             key={index}
-            className={index === activeTab ? 'active' : ''}
+            className={index === activeTab ? 'activeTab' : ''}
             onClick={() => tabClickHandler(index)}
           >
             {day}

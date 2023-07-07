@@ -2,6 +2,7 @@ import './Exercise.css';
 import WeightVisualizer from './WeightVisualizer';
 import RpeDropdown from './RpeDropdown';
 import ExpandableNotes from './ExpandableNotes';
+import { AiOutlineClose } from 'react-icons/ai';
 
 const Exercise = ({ props, onRemoveExercise }) => {
   const handleRemoveExercise = (id) => {
@@ -25,42 +26,51 @@ const Exercise = ({ props, onRemoveExercise }) => {
         </div>
       </div>
       {props.map((props) => (
-        <div
-          className="Exercise-Item"
-          key={props.id}
-          day={props.day}
-          visualize={props.visualize}
-        >
-          <div className="Movement">
-            <p>{props.movement}</p>
-          </div>
-          <div className="Scheme">
-            <p>{props.scheme}</p>
-          </div>
-          <div className="RpeDropdown">
-            <RpeDropdown rpe={props.rpe} />
-          </div>
-          <div className="Weight">
-            {props.$visualize === true ? (
-              <div>
-                {props.weight === 0 ? <p>BW</p> : <p>{props.weight}kg</p>}
-
-                <WeightVisualizer
-                  className="WeightVisualizer"
-                  weight={props.weight}
-                />
+        <div className="Exercise-Card">
+          <div className="Exercise-Item">
+            <div
+              className="Exercise-Info"
+              key={props.id}
+              day={props.day}
+              visualize={props.visualize}
+            >
+              <div className="Movement">
+                <p>{props.movement}</p>
               </div>
-            ) : (
-              <div>
-                {props.weight === 0 ? <p>BW</p> : <p>{props.weight}kg</p>}
+              <div className="Scheme">
+                <p>{props.scheme}</p>
               </div>
-            )}
-          </div>
-          <div className="Delete">
-            <button onClick={() => handleRemoveExercise(props.id)}>X</button>
+              <div className="RpeDropdown">
+                <RpeDropdown rpe={props.rpe} />
+              </div>
+              <div className="Weight">
+                {props.$visualize === true ? (
+                  <div>
+                    {props.weight === '' ? <p>BW</p> : <p>{props.weight}kg</p>}
+                    <WeightVisualizer
+                      className="WeightVisualizer"
+                      weight={props.weight}
+                    />
+                  </div>
+                ) : (
+                  <div>
+                    {props.weight === '' ? <p>BW</p> : <p>{props.weight}kg</p>}
+                  </div>
+                )}
+              </div>
+            </div>
+            <div className="Delete">
+              <button onClick={() => handleRemoveExercise(props.id)}>
+                <AiOutlineClose />
+              </button>
+            </div>
           </div>
           <div className="Notes">
-            <ExpandableNotes notes={props.notes}></ExpandableNotes>
+            {props.notes === '' ? (
+              <></>
+            ) : (
+              <ExpandableNotes notes={props.notes}></ExpandableNotes>
+            )}
           </div>
         </div>
       ))}

@@ -109,7 +109,7 @@ const NewExcercise = (props) => {
             <label>Notes</label>
             <input
               type="text"
-              checked={enteredNotes}
+              value={enteredNotes}
               onChange={notesChangeHandler}
             />
           </div>
