@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import './NewExercise.css';
 import { TabContext } from '../Context/TabProvider';
 
-const NewExcercise = (props) => {
+const NewExcercise = ({onSaveNewExercise}) => {
   const context = useContext(TabContext);
 
   const [enteredMovement, setEnteredMovement] = useState('');
@@ -47,7 +47,7 @@ const NewExcercise = (props) => {
       notes: enteredNotes,
     };
 
-    props.onSaveNewExercise(exerciseData);
+    onSaveNewExercise(exerciseData);
     setEnteredMovement('');
     setEnteredScheme('');
     setEnteredRPE('');

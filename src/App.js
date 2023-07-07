@@ -24,7 +24,7 @@ const DUMMYexercises = [
     weight: 195,
     day: 0,
     $visualize: true,
-    ntoes: ''
+    notes: ''
   },
   {
     id: 3,

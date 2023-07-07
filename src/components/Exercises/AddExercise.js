@@ -1,12 +1,12 @@
 import NewExcercise from './NewExercise';
 import './AddExercise.css';
 
-const AddExercise = (props) => {
+const AddExercise = ({onAddNewExercise}) => {
   const saveNewExerciseHandler = (enteredExerciseData) => {
     const exerciseData = {
       ...enteredExerciseData,
     };
-    props.onAddNewExercise(exerciseData);
+    onAddNewExercise(exerciseData);
   };
   return (
     <div className="AddExercise">
