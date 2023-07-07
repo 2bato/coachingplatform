@@ -1,7 +1,7 @@
 import './Exercise.css';
-import React, { useState } from 'react';
 import WeightVisualizer from './WeightVisualizer';
 import RpeDropdown from './RpeDropdown';
+import ExpandableNotes from './ExpandableNotes';
 
 const Exercise = ({ props, onRemoveExercise }) => {
   const handleRemoveExercise = (id) => {
@@ -59,7 +59,9 @@ const Exercise = ({ props, onRemoveExercise }) => {
           <div className="Delete">
             <button onClick={() => handleRemoveExercise(props.id)}>X</button>
           </div>
-          <div className="Notes"></div>
+          <div className="Notes">
+            <ExpandableNotes notes={props.notes}></ExpandableNotes>
+          </div>
         </div>
       ))}
     </div>
