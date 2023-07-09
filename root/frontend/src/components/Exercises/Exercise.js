@@ -41,12 +41,20 @@ const Exercise = ({ props, onRemoveExercise }) => {
                 <p>{props.scheme}</p>
               </div>
               <div className="RpeDropdown">
-                <RpeDropdown rpe={props.rpe} />
+                {props.rpe === null ? (
+                  <p>N/A</p>
+                ) : (
+                  <RpeDropdown rpe={props.rpe} />
+                )}
               </div>
               <div className="Weight">
                 {props.$visualize === true ? (
                   <div>
-                    {props.weight === '' ? <p>BW</p> : <p>{props.weight}kg</p>}
+                    {props.weight === null ? (
+                      <p>BW</p>
+                    ) : (
+                      <p>{props.weight}kg</p>
+                    )}
                     <WeightVisualizer
                       className="WeightVisualizer"
                       weight={props.weight}
@@ -54,7 +62,11 @@ const Exercise = ({ props, onRemoveExercise }) => {
                   </div>
                 ) : (
                   <div>
-                    {props.weight === '' ? <p>BW</p> : <p>{props.weight}kg</p>}
+                    {props.weight === null ? (
+                      <p>BW</p>
+                    ) : (
+                      <p>{props.weight}kg</p>
+                    )}
                   </div>
                 )}
               </div>
