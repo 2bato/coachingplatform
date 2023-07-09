@@ -26,14 +26,14 @@ const Exercise = ({ props, onRemoveExercise }) => {
         </div>
       </div>
       {props.map((props) => (
-        <div className="Exercise-Card">
+        <div
+          className="Exercise-Card"
+          key={props._id}
+          day={props.day}
+          visualize={props.visualize}
+        >
           <div className="Exercise-Item">
-            <div
-              className="Exercise-Info"
-              key={props.id}
-              day={props.day}
-              visualize={props.visualize}
-            >
+            <div className="Exercise-Info">
               <div className="Movement">
                 <p>{props.movement}</p>
               </div>
@@ -60,7 +60,7 @@ const Exercise = ({ props, onRemoveExercise }) => {
               </div>
             </div>
             <div className="Delete">
-              <button onClick={() => handleRemoveExercise(props.id)}>
+              <button onClick={() => handleRemoveExercise(props._id)}>
                 <AiOutlineClose />
               </button>
             </div>

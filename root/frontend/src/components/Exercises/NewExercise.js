@@ -37,7 +37,6 @@ const NewExcercise = ({onSaveNewExercise}) => {
     event.preventDefault();
 
     const exerciseData = {
-      id: crypto.randomUUID(),
       movement: enteredMovement,
       scheme: enteredScheme,
       rpe: enteredRPE,

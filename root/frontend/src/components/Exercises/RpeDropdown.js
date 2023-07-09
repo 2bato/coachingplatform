@@ -10,7 +10,7 @@ const RpeDropdown = ({ rpe }) => {
 
   return (
     <div className="RpeButton">
-      <select value={RPE} onChange={clickHandler}>
+      <select value={RPE || ''} onChange={clickHandler}>
         {options.map((option) => (
           <option key={option} value={option}>
             {option}

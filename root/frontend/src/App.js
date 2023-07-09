@@ -1,68 +1,51 @@
 import './App.css';
 import Header from './components/Header';
 import AddExercise from './components/Exercises/AddExercise';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import DayTab from './components/DayTab';
+import axios from 'axios';
 import WeightChart from './components/MetricsTracking/WeightChart';
-
-const DUMMYexercises = [
-  {
-    id: 1,
-    movement: 'Low Bar Paused Squat',
-    scheme: '1 set of 4',
-    rpe: 7,
-    weight: 85,
-    day: 0,
-    $visualize: true,
-    notes: 'Cue back extension, slow out of the hole'
-  },
-  {
-    id: 2,
-    movement: 'Low Bar Comp Squat',
-    scheme: '2 sets of 6',
-    rpe: 6,
-    weight: 195,
-    day: 0,
-    $visualize: true,
-    notes: ''
-  },
-  {
-    id: 3,
-    movement: 'Tempo Paused Bench',
-    scheme: '3 sets of 7',
-    rpe: 7,
-    weight: 257.5,
-    day: 1,
-    $visualize: true,
-    notes: ''
-  },
-  {
-    id: 4,
-    movement: 'Cable Tricep Pushdowns',
-    scheme: '3 sets of 7',
-    rpe: 8,
-    weight: 267.5,
-    day: 2,
-    $visualize: false,
-    notes: ''
-  },
-];
 
 const App = () => {
   const WeekNumber = '1';
 
-  const [exercises, setExercises] = useState(DUMMYexercises);
+  const [exercises, setExercises] = useState([]);
+
+  useEffect(() => {
+    fetchExercises();
+  }, []);
+
+  const fetchExercises = () => {
+    axios
+      .get('http://localhost:8082/api/Exercises')
+      .then((res) => {
+        setExercises(res.data);
+      })
+      .catch((err) => {
+        console.log('Error from ShowBookList');
+      });
+  };
 
   const addExerciseHandler = (exercise) => {
-    setExercises((prevExercises) => {
-      return [...prevExercises, exercise];
-    });
+    axios
+      .post('http://localhost:8082/api/Exercises', exercise)
+      .then(() => {
+        fetchExercises();
+      })
+      .catch((err) => {
+        console.log('Error in AddExercise!');
+      });
   };
 
   const removeExerciseHandler = (exerciseId) => {
-    setExercises((prevExercises) => {
-      return prevExercises.filter((exercise) => exercise.id !== exerciseId);
-    });
+    axios
+      .delete(`http://localhost:8082/api/Exercises/${exerciseId}`)
+      .then((res) => {
+        fetchExercises();
+      })
+      .catch((err) => {
+        console.log('Error in RemoveExercise!');
+      });
   };
 
   return (
@@ -77,6 +60,6 @@ const App = () => {
       </div>
     </div>
   );
-}
+};
 
 export default App;
